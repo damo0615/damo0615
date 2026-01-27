@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Dev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#hero" class="logo">DevPortfolio</a>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SOBRE MÍ -->
+    <section id="hero">
+        <div class="container hero-content">
+            <div>
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Foto de perfil" class="profile-img">
+            </div>
+            <div class="hero-text">
+                <h1>Hola, soy <span>Daniel Oviedo</span></h1>
+                <p>Desarrollador Full Stack apasionado por crear soluciones digitales innovadoras y eficientes. Con más de 3 años de experiencia en el desarrollo web, me especializo en JavaScript, React y Node.js. Me encanta aprender nuevas tecnologías y colaborar en proyectos desafiantes.</p>
+                <p>Mi objetivo es crear experiencias de usuario excepcionales mientras escribo código limpio y mantenible.</p>
+                
+                <div class="skills">
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+                
+                <a href="#contact" class="btn">Contáctame</a>
+                <a href="#" class="btn" style="margin-left: 10px; background-color: #334155;">Descargar CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="projects">
+        <div class="container">
+            <h2>Mis Proyectos</h2>
+            <div class="projects-grid">
+                <div class="project-card project-1">
+                    <div class="project-img"></div>
+                    <div class="project-info">
+                        <h3>E-commerce Moderno</h3>
+                        <p>Plataforma de comercio electrónico con carrito de compras, pasarela de pago y panel de administración.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card project-2">
+                    <div class="project-img"></div>
+                    <div class="project-info">
+                        <h3>App de Tareas</h3>
+                        <p>Aplicación web para gestión de tareas con arrastrar y soltar, recordatorios y categorías personalizadas.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card project-3">
+                    <div class="project-img"></div>
+                    <div class="project-info">
+                        <h3>Clima Global</h3>
+                        <p>Aplicación de pronóstico del tiempo con mapas interactivos y alertas meteorológicas en tiempo real.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contact">
+        <div class="container contact-wrapper">
+            <h2>Contacto</h2>
+            <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
+            
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Mi Portafolio. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">Diseñado y desarrollado con ❤️ por mí</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menú hamburguesa
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Formulario de contacto
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aquí normalmente enviarías el formulario a un servidor
+            // Para este ejemplo, solo mostraremos una alerta
+            const name = document.getElementById('name').value;
+            alert(`¡Gracias ${name}! Tu mensaje ha sido enviado. Te responderé pronto.`);
+            
+            // Resetear formulario
+            this.reset();
+        });
+        
+        // Efecto de cambio de navbar al hacer scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.backgroundColor = 'rgba(30, 41, 59, 0.95)';
+                nav.style.padding = '15px 0';
+            } else {
+                nav.style.backgroundColor = '#1e293b';
+                nav.style.padding = '20px 0';
+            }
+        });
+    </script>
+</body>
+</html>
